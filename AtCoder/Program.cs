@@ -8,46 +8,18 @@ namespace AtCoder
   {
     static void Main(string[] args)
     {
-      int N = int.Parse(Console.ReadLine());
-
-      List<int> primes = new List<int>();
-      for(int i = 11; i <= 55555; i += 10)
-        if(IsPrime(i))
-        {
-          primes.Add(i);
-          if(primes.Count == N)
-          {
-            string s = "";
-            foreach(int p in primes)
-              s += " " + p.ToString();
-            Console.WriteLine(s.Substring(1));
-            Console.ReadLine();
-            return;
-          }
-        }
-    }
-
-    static bool IsPrime(int n)
-    {
-      for(int i = 3; i <= n / 2; i += 2)
+      string[] ss = Console.ReadLine().Split(' ');
+      int N = int.Parse(ss[0]);
+      int K = int.Parse(ss[1]);
+      long p = K;
+      for(int i = 1; i < N; i++)
       {
-        if(n % i == 0)
-          return false;
+        p *= (K-1);
       }
-      return true;
+
+      Console.WriteLine(p);
+      Console.ReadLine();
     }
-    static bool IsOK(List<int>ans,int newAns)
-    {
-      for(int a = 1; a < ans.Count - 3; a++)
-        for(int b = a + 1; b < ans.Count - 2; b++)
-          for(int c = b + 1; c < ans.Count - 1; c++)
-            for(int d = c + 1; d < ans.Count; d++)
-            {
-              int sum = ans[a] + ans[b] + ans[c] + ans[d] + newAns;
-              if(IsPrime(sum))
-                return false;
-            }
-      return true;
-    }
+
   }
 }

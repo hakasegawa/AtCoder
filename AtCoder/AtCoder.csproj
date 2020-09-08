@@ -53,6 +53,9 @@
     <Compile Include="086C.cs" />
     <Compile Include="075B.cs" />
     <Compile Include="096C.cs" />
+    <Compile Include="070C.cs" />
+    <Compile Include="055B.cs" />
+    <Compile Include="046B.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
