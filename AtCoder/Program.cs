@@ -9,15 +9,25 @@ namespace AtCoder
     static void Main(string[] args)
     {
       string[] ss = Console.ReadLine().Split(' ');
-      int N = int.Parse(ss[0]);
-      int K = int.Parse(ss[1]);
-      long p = K;
-      for(int i = 1; i < N; i++)
+      long a = long.Parse(ss[0]);
+      long b = long.Parse(ss[1]);
+      long c = long.Parse(ss[2]);
+      long d = a % b;
+      long amount = 0;
+      for(int i = 0; i < b; i++)
       {
-        p *= (K-1);
+        amount += d;
+        if(amount >= b)
+          amount = amount % b;
+        if(amount == c)
+        {
+          Console.WriteLine("YES");
+          Console.ReadLine();
+          return;
+        }
       }
 
-      Console.WriteLine(p);
+      Console.WriteLine("NO");
       Console.ReadLine();
     }
 
